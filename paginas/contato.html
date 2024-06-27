@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="shortcut icon" href="../images/solo.ico" type="image/x-icon">
+    <title>EcoHorto</title>
+    <style>
+       
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        input, select, textarea {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #45a049;
+        }
+      </style>
+</head>
+<body>
+    <header>
+        <img src="../images/solo.png" alt="Logo da EcoHorto">
+        <h1>EcoHorto - O.N.G. Ecológica</h1>
+        <h3>Unindo tecnologia e natureza para um futuro sustentável em Hortolândia</h3>
+    </header>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="reciclagem.html">Reciclagem</a>
+        <a href="preservacao.html">Preservação de Rios</a>
+        <a href="consumo.html">Consumo Consciente</a>
+        <a href="contato.html">Contato</a>
+        <a href="localizacao.html">Localização</a>
+    </nav>
+
+    <main>
+        <h2>Formulário de Contato</h2>
+
+        <form id="contactForm" action="#" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" required>
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required>
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" required>
+
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+        <label for="escolaridade">Grau de Escolaridade:</label>
+        <select id="escolaridade" name="escolaridade" required>
+            <option value="">Selecione...</option>
+            <option value="Fundamental">Fundamental</option>
+            <option value="Médio">Médio</option>
+            <option value="Superior">Superior</option>
+            <option value="Pós-Graduação">Pós-Graduação</option>
+        </select>
+
+        <label for="comentario">Comentário:</label>
+        <textarea id="comentario" name="comentario" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpar</button>
+        </form>
+
+        <script>
+        
+        var telefoneInput = document.getElementById('telefone');
+        telefoneInput.addEventListener('input', function () {
+            var telefone = this.value.replace(/\D/g, '');
+            telefone = telefone.replace(/^(\d{2})(\d)/g, '($1) $2');
+            telefone = telefone.replace(/(\d)(\d{4})$/, '$1-$2');
+            this.value = telefone;
+        });
+        </script>
+
+    </main>
+
+    <footer>
+        <p>IFSP de Hortolândia - Análise e Desenvolvimento de Sistemas</p>
+        <p>DESENVOLVIMENTO WEB</p>
+        <p>Adilson e Maik</p>
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>  
+</body>
+</html>
